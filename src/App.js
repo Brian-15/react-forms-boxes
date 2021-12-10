@@ -21,3 +21,4 @@ const App = () => {
 }
 
 export default App;
+export { boxData as initialData };
