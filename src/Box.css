@@ -1,4 +1,15 @@
 .Box {
     display: flex;
     flex-direction: row;
+    margin-top: 3em;
+}
+
+.Box-body {
+    margin-right: 1em;
+}
+
+.Box-remove-btn {
+    margin: auto;
+    width: 2em;
+    height: 2em;
 }

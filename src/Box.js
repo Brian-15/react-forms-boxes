@@ -4,8 +4,8 @@ import './Box.css';
 const Box = ({ removeBox, id, ...style }) => {
     return (
         <div className='Box' id={id}>
-            <div style={style} />
-            <button onClick={removeBox}>X</button>
+            <div className='Box-body' style={style} />
+            <button className='Box-remove-btn' onClick={removeBox}>X</button>
         </div>
     );
 };
