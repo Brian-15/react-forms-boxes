@@ -12,9 +12,9 @@ const NewBoxForm = ({ addBox }) => {
             [name]: value
         }));
     };
-
     const handleSubmit = evt => {
         evt.preventDefault();
+        if (Object.values(formData).some(val => val == '')) return;
         addBox(formData);
         setFormData(initialData);
     };
