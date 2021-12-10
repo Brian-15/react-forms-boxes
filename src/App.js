@@ -1,24 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import BoxList from './BoxList';
 
-function App() {
+function genBoxData(backgroundColor, width, height) {
+  return { backgroundColor, width, height };
+}
+
+const boxData = [
+  genBoxData('blue', '500px', '200px'),
+  genBoxData('green', '50px', '60px'),
+  genBoxData('red', '50px', '60px'),
+]
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BoxList initialData={boxData} />
+    </>
   );
 }
 
