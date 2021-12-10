@@ -1,8 +1,11 @@
 import React from 'react';
 
-const Box = (props) => {
+const Box = ({ removeBox, id, ...style }) => {
     return (
-        <div style={props} />
+        <div id={id}>
+            <div style={style} />
+            <button onClick={removeBox}>X</button>
+        </div>
     );
 };
 

@@ -7,18 +7,25 @@ const BoxList = ({ initialData }) => {
     const [ boxData, setBoxData ] = useState(initialData);
 
     const addBox = data => {
-        setBoxData(boxData => [...boxData, data]);
+        setBoxData(boxData => [...boxData, {...data, id: uuid()}]);
+    }
+
+    const removeBox = evt => {
+        const id = evt.target.parentElement.id;
+        setBoxData(boxData => boxData.filter(box => box.id != id));
     }
 
     return (
         <div>
             <NewBoxForm addBox={addBox} />
-            {boxData.map(({backgroundColor, width, height}) => (
+            {boxData.map(({id, backgroundColor, width, height}) => (
                 <Box
+                    id={id}
                     backgroundColor={backgroundColor}
                     width={width}
                     height={height}
-                    key={uuid()}
+                    key={id}
+                    removeBox={removeBox}
                 />
             ))}
         </div>
