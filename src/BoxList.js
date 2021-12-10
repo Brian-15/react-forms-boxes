@@ -2,6 +2,7 @@ import { React, useState } from 'react';
 import { v4 as uuid } from 'uuid';
 import Box from './Box.js';
 import NewBoxForm from './NewBoxForm.js';
+import './BoxList.css';
 
 const BoxList = ({ initialData }) => {
     const [ boxData, setBoxData ] = useState(initialData);
@@ -16,7 +17,7 @@ const BoxList = ({ initialData }) => {
     }
 
     return (
-        <div>
+        <div className='BoxList'>
             <NewBoxForm addBox={addBox} />
             {boxData.map(({id, backgroundColor, width, height}) => (
                 <Box
