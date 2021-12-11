@@ -3,9 +3,7 @@ import './App.css';
 import BoxList from './BoxList';
 
 const App = () => {
-  return (
-    <BoxList />
-  );
+  return <BoxList />;
 }
 
 export default App;
