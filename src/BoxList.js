@@ -19,12 +19,12 @@ const BoxList = ({ initialData=defaultData }) => {
 
     const addBox = data => {
         setBoxData(boxData => [...boxData, {...data, id: uuid()}]);
-    }
+    };
 
     const removeBox = evt => {
         const id = evt.target.parentElement.id;
         setBoxData(boxData => boxData.filter(box => box.id !== id));
-    }
+    };
 
     return (
         <div className='BoxList'>
