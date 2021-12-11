@@ -4,7 +4,17 @@ import Box from './Box.js';
 import NewBoxForm from './NewBoxForm.js';
 import './BoxList.css';
 
-const BoxList = ({ initialData }) => {
+function genBoxData(backgroundColor, width, height, id) {
+    return { backgroundColor, width, height, id };
+}
+
+const defaultData = [
+    genBoxData('blue', '500px', '200px', uuid()),
+    genBoxData('green', '50px', '60px', uuid()),
+    genBoxData('red', '50px', '60px', uuid()),
+]
+
+const BoxList = ({ initialData=defaultData }) => {
     const [ boxData, setBoxData ] = useState(initialData);
 
     const addBox = data => {
@@ -13,7 +23,7 @@ const BoxList = ({ initialData }) => {
 
     const removeBox = evt => {
         const id = evt.target.parentElement.id;
-        setBoxData(boxData => boxData.filter(box => box.id != id));
+        setBoxData(boxData => boxData.filter(box => box.id !== id));
     }
 
     return (

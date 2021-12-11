@@ -14,7 +14,7 @@ const NewBoxForm = ({ addBox }) => {
     };
     const handleSubmit = evt => {
         evt.preventDefault();
-        if (Object.values(formData).some(val => val == '')) return;
+        if (Object.values(formData).some(val => val === '')) return;
         addBox(formData);
         setFormData(initialData);
     };
