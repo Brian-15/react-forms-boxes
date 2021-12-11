@@ -4,34 +4,38 @@ exports[`matches snapshot 1`] = `
 <DocumentFragment>
   <form
     class="NewBoxForm"
+    data-testid="form"
   >
     <label
       for="backgroundColor"
     >
       Color:
+      <input
+        data-testid="bg-color"
+        name="backgroundColor"
+        value=""
+      />
     </label>
-    <input
-      name="backgroundColor"
-      value=""
-    />
     <label
       for="width"
     >
       Width:
+      <input
+        data-testid="width"
+        name="width"
+        value=""
+      />
     </label>
-    <input
-      name="width"
-      value=""
-    />
     <label
       for="height"
     >
       Height:
+      <input
+        data-testid="height"
+        name="height"
+        value=""
+      />
     </label>
-    <input
-      name="height"
-      value=""
-    />
     <button>
       Add Box
     </button>

@@ -7,6 +7,7 @@ exports[`matches snapshot 1`] = `
   >
     <div
       class="Box-body"
+      data-testid="box"
       style="background-color: blue; width: 200px; height: 200px;"
     />
     <button

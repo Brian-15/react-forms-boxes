@@ -20,25 +20,31 @@ const NewBoxForm = ({ addBox }) => {
     };
 
     return (
-        <form className='NewBoxForm' onSubmit={handleSubmit}>
-            <label htmlFor='backgroundColor'>Color:</label>
-            <input
-              name='backgroundColor'
-              value={formData.backgroundColor}
-              onChange={handleChange}
-            />
-            <label htmlFor='width'>Width:</label>
-            <input
-              name='width'
-              value={formData.width}
-              onChange={handleChange}
-            />
-            <label htmlFor='height'>Height:</label>
-            <input
-              name='height'
-              value={formData.height}
-              onChange={handleChange}
-            />
+        <form className='NewBoxForm' onSubmit={handleSubmit} data-testid="form">
+            <label htmlFor='backgroundColor'>Color:
+              <input
+                name='backgroundColor'
+                value={formData.backgroundColor}
+                onChange={handleChange}
+                data-testid='bg-color'
+              />
+            </label>
+            <label htmlFor='width'>Width:
+              <input
+                name='width'
+                value={formData.width}
+                onChange={handleChange}
+                data-testid='width'
+              />
+            </label>
+            <label htmlFor='height'>Height:
+              <input
+                name='height'
+                value={formData.height}
+                onChange={handleChange}
+                data-testid='height'
+              />
+            </label>
             <button>Add Box</button>
         </form>
     );
