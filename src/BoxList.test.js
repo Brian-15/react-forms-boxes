@@ -1,4 +1,4 @@
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, waitForElementToBeRemoved } from '@testing-library/react';
 import BoxList from './BoxList.js';
 
 /** mock uuid with an incrementing id starting from 0
@@ -45,4 +45,27 @@ test('should add new box', () => {
     const newBoxes = queryAllByTestId('box');
     expect(newBoxes.length).toBe(4);
     expect(newBoxes[3]).toHaveStyle('background-color: pink;');
+});
+
+test('should remove box', () => {
+    const {
+      queryByText,
+      queryAllByTestId,
+      queryByTestId
+    } = render(<BoxList initialData={[{
+      backgroundColor: 'blue',
+      width: '200px',
+      height: '200px'
+    }]} />);
+    
+    const box = queryByTestId('box');
+
+    expect(queryAllByTestId('box').length).toBe(1);
+
+    const btn = queryByText('X');
+    fireEvent.click(btn);
+
+    waitForElementToBeRemoved(box).then(() => {
+      expect(queryAllByTestId('box').length).toBe(0);
+    });
 });
